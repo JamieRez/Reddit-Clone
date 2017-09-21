@@ -1,0 +1,12 @@
+extends layout
+block body
+    .row
+        a(href='/posts/new')
+            button Create Post
+        .col-sm-8.col-sm-offset-2
+            div.postsContainer
+                for post in posts
+                    a(href="/posts/"+post._id)
+                        h3=post.title
+                    a(href="/g/"+post.subreddit)=post.subreddit
+            

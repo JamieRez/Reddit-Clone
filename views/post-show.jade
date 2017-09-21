@@ -1,0 +1,15 @@
+extends layout
+block body
+    .row
+        .col-sm-6.col-sm-offset-3
+            a.lead(href='/posts/'+post._id)
+                h1= post.title
+            p=post.summary
+            form(method='POST' action='/posts/'+post._id+'/comments')
+                textarea.form-control(name='content', placeholder='Comment')
+                .text-right
+                    button(type='submit') Save
+            for comment in post.comments
+                p=comment.content
+            a(href="/")
+                button.btn.btn-primary Exit
