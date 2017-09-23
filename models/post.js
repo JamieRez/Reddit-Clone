@@ -6,7 +6,8 @@ var PostSchema = new Schema({
   summary         : { type: String, required: true },
   subreddit  : {type: String, required: true },
   url : String,
-  comments  : [{ type: Schema.Types.ObjectId, ref: 'Comment' }]
+  comments  : [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
+  author  :  String
 });
 
 module.exports = mongoose.model('Post', PostSchema);

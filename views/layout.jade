@@ -5,14 +5,22 @@ html
         // Latest compiled and minified JavaScript
         script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
         title Gettit
+        block head
     body
         nav.navbar.navbar-default
             .container
                 .navbar-header
                     a(href="/").navbar-brand Gettit
-                ul.nav.navbar-nav.navbar-right
-                    li
-                        a(href='/login') Login
-                    li
-                        a(href='/sign-up') Sign Up
+                if (!currentUser) 
+                    ul.nav.navbar-nav.navbar-right
+                        li
+                            a(href='/login') Login
+                        li
+                            a(href='/sign-up') Sign Up
+                else
+                    ul.nav.navbar-nav.navbar-right
+                        li
+                            a(href="/user/"+currentUser.username)=currentUser.username
+                        li
+                            a(href='/logout') Logout
         block body

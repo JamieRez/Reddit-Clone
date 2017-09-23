@@ -1,4 +1,6 @@
 extends layout
+block head
+    link(href='index.css', rel='stylesheet')
 block body
     .row
         a(href='/posts/new')
@@ -8,5 +10,6 @@ block body
                 for post in posts
                     a(href="/posts/"+post._id)
                         h3=post.title
-                    a(href="/g/"+post.subreddit)=post.subreddit
+                    p#author=post.author
+                    a(href="/g/"+post.subreddit)=("/" + post.subreddit + "/")
             

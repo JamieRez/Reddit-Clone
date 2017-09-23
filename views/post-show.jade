@@ -1,4 +1,6 @@
 extends layout
+block head
+    link(href='../post.css', rel='stylesheet')
 block body
     .row
         .col-sm-6.col-sm-offset-3
@@ -11,5 +13,6 @@ block body
                     button(type='submit') Save
             for comment in post.comments
                 p=comment.content
+                p#author=comment.author
             a(href="/")
                 button.btn.btn-primary Exit
