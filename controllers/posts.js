@@ -18,7 +18,7 @@ module.exports = function(app) {
   //Individual Post Page
   app.get('/posts/:id', function (req, res) {
     // LOOK UP THE POST
-    Post.findById(req.params.id).populate('comments').exec(function(err, post) {
+    Post.findById(req.params.id).exec(function(err, post) {
 
       // RESPOND BY RENDERING THE TEMPLATE
       res.render('post-show', { post: post, currentUser : req.user });

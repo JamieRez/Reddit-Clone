@@ -1,3 +1,13 @@
 #author{
     color : red;
+    display : inline;
+    margin-right: 10px;
+}
+
+#replyBtn{
+    display : inline;
+}
+
+.commentContainer{
+    margin-bottom: 15px;
 }
