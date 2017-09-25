@@ -11,5 +11,6 @@ block body
                     a(href="/posts/"+post._id)
                         h3=post.title
                     p#author=post.author
-                    a(href="/g/"+post.subreddit)=("/" + post.subreddit + "/")
+                    a#subreddit(href="/g/"+post.subreddit)=("/" + post.subreddit + "/")
+                    
             

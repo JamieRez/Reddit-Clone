@@ -12,6 +12,8 @@ require('dotenv').config();
 
 app.set('view engine', 'jade');
 app.use(express.static('./views/styles'))
+app.use(express.static('./views/js'))
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
 // parse application/json

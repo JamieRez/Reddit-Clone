@@ -9,7 +9,10 @@ var PostSchema = new Schema({
   subreddit  : {type: String, required: true },
   url : String,
   comments  : [Comment.schema],
-  author  :  String
+  author  :  String,
+  upVotes : [Schema.Types.ObjectId],
+  downVotes : [Schema.Types.ObjectId],
+  voteScore : {type : Number , default : 0}
 });
 
 module.exports = mongoose.model('Post', PostSchema);

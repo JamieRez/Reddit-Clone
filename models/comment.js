@@ -3,7 +3,8 @@ var mongoose = require('mongoose'),
 
   var CommentSchema = new Schema({
     content : { type: String, required: true },
-    author  : String
+    author  : String,
+    replies : [this]  
   });
 
   module.exports = mongoose.model('Comment', CommentSchema);
